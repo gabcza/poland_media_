@@ -39,6 +39,19 @@ The trust index is the mean of the following items on a 0 to 1 scale:
 \text{Biased} ----&--- \text{Objective}\\
 \end{align*} 
 
+```{r}
+#trust_index correlation 
+trust_dat <- cbind(dat_long$truthful, dat_long$trustworthy, dat_long$objective)
+
+cor_mat <- cor(trust_dat)
+
+colnames(cor_mat)<- c("truthful", "trustworthy", "objective")
+rownames(cor_mat) <- c("truthful", "trustworthy", "objective")
+
+cor_mat
+```
+
+
 # Preliminary Summary Stats
 
 ## Sample demographics and survey responses
